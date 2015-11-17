@@ -76,6 +76,7 @@ public class HommieLoginWelcome extends JFrame {
 				char[] strArrayMainPrivKey = fullPwdField.getPassword();
 				String strMainPrivKey = new String(strArrayMainPrivKey);
 				JOptionPane.showMessageDialog(null, strMainPrivKey);
+				//TODO: 
 				//TODO: Do While loop on char array to set each element back to zero after password is used
 				
 			}
