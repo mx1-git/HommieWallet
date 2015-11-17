@@ -30,7 +30,7 @@ public class HommieWalletApp {
 			public void run() {
 				try {
 					HommieWalletApp window = new HommieWalletApp();
-					window.frameMainApp.setVisible(true);
+					window.getFrameMainApp().setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -49,22 +49,30 @@ public class HommieWalletApp {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frameMainApp = new JFrame();
-		frameMainApp.setTitle("Hommie Wallet App");
-		frameMainApp.getContentPane().setBackground(new Color(153, 153, 153));
-		frameMainApp.getContentPane().setForeground(new Color(153, 204, 204));
-		frameMainApp.getContentPane().setLayout(new CardLayout(0, 0));
-		frameMainApp.setBounds(100, 100, 800, 600);
-		frameMainApp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setFrameMainApp(new JFrame());
+		getFrameMainApp().setTitle("Hommie Wallet App");
+		getFrameMainApp().getContentPane().setBackground(new Color(153, 153, 153));
+		getFrameMainApp().getContentPane().setForeground(new Color(153, 204, 204));
+		getFrameMainApp().getContentPane().setLayout(new CardLayout(0, 0));
+		getFrameMainApp().setBounds(100, 100, 800, 600);
+		getFrameMainApp().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
-		frameMainApp.setJMenuBar(menuBar);
+		getFrameMainApp().setJMenuBar(menuBar);
 		
 		JMenu mnFile = new JMenu("File");
 		menuBar.add(mnFile);
 		
 		JMenuItem mntmExit = new JMenuItem("Exit");
 		mnFile.add(mntmExit);
+	}
+
+	public JFrame getFrameMainApp() {
+		return frameMainApp;
+	}
+
+	public void setFrameMainApp(JFrame frameMainApp) {
+		this.frameMainApp = frameMainApp;
 	}
 
 }
