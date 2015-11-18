@@ -10,5 +10,5 @@ This app will communicate with other HommieWallet app nodes to further verify us
 private key in a fragmented and encrypted state.
 
 Users will be rewarded for helping to validate other user's logins via HommieTokens.   Spam prevention methods will 
-include charging users 1 HommieToken per login attempt.   New users will recieve 1000 HommieTokens at sign-up, and 
-they can earn more by running their copy of the HommieWallet app as well as by refering other users.
+include charging users 1 HommieToken per login attempt.   New users will receive 1000 HommieTokens at sign-up, and 
+they can earn more by running their copy of the HommieWallet app as well as by referring other users.
