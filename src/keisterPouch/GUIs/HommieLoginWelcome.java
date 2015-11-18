@@ -15,6 +15,7 @@ import java.awt.Font;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -73,14 +74,14 @@ public class HommieLoginWelcome extends JFrame {
 		btnLoginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				char[] strArrayMainPrivKey = fullPwdField.getPassword();
-				String strMainPrivKey = new String(strArrayMainPrivKey);
+				char[] charArrayMainPrivKey = fullPwdField.getPassword();
 				//JOptionPane.showMessageDialog(null, strMainPrivKey);
 				try {
 					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 				} catch (Throwable e) {
 					e.printStackTrace();
 				}
+				//Launch HommieWalletApp in new thread
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
@@ -91,8 +92,10 @@ public class HommieLoginWelcome extends JFrame {
 						}
 					}
 				});
-				//TODO: 
-				//TODO: Do While loop on char array to set each element back to zero after password is used
+				//TODO: Verify password with the main HommieWalletApp
+				Arrays.fill(charArrayMainPrivKey, '0');
+				String strMainPrivKey = new String(charArrayMainPrivKey);
+				JOptionPane.showMessageDialog(null, strMainPrivKey);
 				setVisible(false);
 			}
 		});
