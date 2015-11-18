@@ -75,9 +75,25 @@ public class HommieLoginWelcome extends JFrame {
 				
 				char[] strArrayMainPrivKey = fullPwdField.getPassword();
 				String strMainPrivKey = new String(strArrayMainPrivKey);
-				JOptionPane.showMessageDialog(null, strMainPrivKey);
+				//JOptionPane.showMessageDialog(null, strMainPrivKey);
+				try {
+					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+				} catch (Throwable e) {
+					e.printStackTrace();
+				}
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							HommieWalletApp window = new HommieWalletApp();
+							window.getFrameMainApp().setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				//TODO: 
 				//TODO: Do While loop on char array to set each element back to zero after password is used
-				
+				setVisible(false);
 			}
 		});
 		
@@ -87,7 +103,7 @@ public class HommieLoginWelcome extends JFrame {
 	private void initComponents() {
 		
 		setIconImage(Toolkit.getDefaultToolkit().getImage(HommieLoginWelcome.class.getResource("/keisterPouch/resources/nxt-icon-32x32.png"))); //$NON-NLS-1$
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 600, 400);
 		
 		JMenuBar menuBar = new JMenuBar();
